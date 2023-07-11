@@ -78,7 +78,7 @@ export default {
 
 <template>
   <section class="bg-gray-50 dark:bg-gray-900 search"
-    style="background-color: #805D49; height: 300px;  background-image: url('/search.jpg');">
+    style="background-color: #805D49; height: 300px;  background-image: url('/search.jpg');margin-top:92px">
     <form style="margin-top: 5%; width: 60%; margin-left: 20%;" @submit.prevent="searchName()">
       <label for="default-search" style="padding-top: 15%"
         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>

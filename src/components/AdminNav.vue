@@ -50,15 +50,15 @@ export default {
 </script>
 <template>
 
-  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600" style="background-color:#805d49">
+    <div class="flex flex-wrap items-center justify-between mx-auto p-4">
      
-        <img src="/chillcafe.png" class="h-8 mr-3"  style=" margin-left: 20px" alt="Chill Cafe" />
+        <img src="/chillcafe.png" class="h-8" style="height: 60px;width: 60px" alt="Chill Cafe" />
     
       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-        style="color: #805d49; margin-left: 30%">ChillCafe</span>
+        style="color: #ffffff;">ChillCafe</span>
 
-      <img style="margin-left: 20%" id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
+      <img style="height: 60px;width: 60px" id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
         data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer"
         src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="User dropdown" />
 
