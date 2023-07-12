@@ -50,7 +50,7 @@
         <div v-if="cafe.isOpen">
                     <div><font-awesome-icon style="color: #805D49; margin-right:9px;" icon="clock"  />   {{ cafe.time_open }}-{{ cafe.time_close }} -  
                       <span style="font-weight: 700;">
-                      オープン中 - 座席数 : 12/36
+                      オープン中 - 座席数 : {{ !todo.curr_seat ? 0 : todo.curr_seat }}/{{ !todo.max_seat ? 0 : todo.max_seat }}
                       </span>
                      </div>
                      </div>

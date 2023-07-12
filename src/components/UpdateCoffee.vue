@@ -24,7 +24,9 @@ export default {
         user_id: '',
         star: '',
         bookmark: '',
-        isOpen: ''
+        isOpen: '',
+        curr_seat: '',
+        max_seat: '',
       }
 
       ,
@@ -120,7 +122,7 @@ export default {
       this.coffeShop.max_seat = e.target.value
     },
     onCurrentSeatInput(e) {
-      this.coffeShop.current_seat = e.target.value
+      this.coffeShop.curr_seat = e.target.value
     },
     onAirInput(bool) {
       if (bool == true)
@@ -201,9 +203,9 @@ export default {
               座席数
             </div>
             <div class=" col-span-7 grid grid-cols-10 gap-4">
-              <input :value="this.coffeShop.max_seat" @input="onMaxSeatInput" type="text" class="input col-span-4">
+              <input :value="this.coffeShop.curr_seat" @input="onCurrentSeatInput" type="text" class="input col-span-4">
               <span class="labelLayout" style="padding-top:30%;">現在 </span>
-              <input :value="this.coffeShop.current_seat" @input="onCurrentSeatInput" type="text" class="input col-span-4">
+              <input :value="this.coffeShop.max_seat" @input="onMaxSeatInput" type="text" class="input col-span-4">
               <span class="labelLayout" style="padding-top:30%;">最大</span>
             </div>
           </div>
