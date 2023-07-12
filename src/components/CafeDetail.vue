@@ -6,14 +6,29 @@
         <div class="text-sm font-semibold pb-4 pt-5">
           <div>
             <div class="flex items-center">
-              <el-rate
-                v-model="cafe.star"
-                disabled
-                show-score
-                text-color="#ff9900"
-                score-template="{value}"
-              >
-              </el-rate>
+              <div
+                        v-if="cafe.star != null"
+                        style="
+                          margin-top: 10px;
+                          margin-bottom: 25px;
+                          font-size: 15px;
+                        "
+                      >
+                        <el-rate
+                          v-model="cafe.star"
+                          disabled
+                          show-score
+                          text-color="#ff9900"
+                          score-template="{value}"
+                        >
+                        </el-rate>
+                      </div>
+                      <div
+                        v-if="cafe.star == null"
+                        style="margin-top: 10px; font-size: 15px"
+                      >
+                        まだレビューはありません
+                      </div>
             </div>
           </div>
         </div>

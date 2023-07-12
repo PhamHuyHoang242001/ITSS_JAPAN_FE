@@ -30,7 +30,7 @@
                 class="rounded object-cover"
                 :src="store.photoUrl"
                 alt=""
-                style="height: 120px; width: 180px"
+                style="height: 160px; width: 180px"
               />
             </div>
             <div class="ml-5">
@@ -64,7 +64,7 @@
                   />
                 </div>
                 <div class="ml-4">{{ store.address }}</div>
-              </div>
+              </div>  
               <div class="flex">
                 <div class="w-4 h-4 self-center">
                   <img
