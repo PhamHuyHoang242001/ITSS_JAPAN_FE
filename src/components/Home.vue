@@ -117,7 +117,7 @@ export default {
           v-model="keyword.name"
           id="default-search"
           class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="名前カフェ"
+          placeholder="名前, 場所"
         />
         <button
           class="text-white absolute right-2.5 bottom-2.5 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2"
@@ -256,16 +256,15 @@ export default {
           </div>
         </div>
         <hr style="color: black; font-weight: bold; width: 250px" />
-        <div
-          style="
-            font-size: 15px;
-            font-weight: 900;
-            margin-top: 30px;
-            margin-bottom: 10px;
-          "
-        >
-          エアコン
+        <div style="font-size: 15px;
+                          font-weight: 900; margin-top: 30px; margin-bottom: 10px;">エアコン</div>
+        <div style="margin-bottom: 30px; padding-left: 20px;">
+          <input type="radio" v-model="keyword.air_conditioner" name="air" id="air" value="0" @change="search()"> 効いていない
+          <br>
+          <input style="" type="radio" v-model="keyword.air_conditioner" name="air" id="air" value="1"
+            @change="searchFilter()"> 効いている
         </div>
+
 
 
         <hr style="color: black; font-weight: bold; width: 250px" />
