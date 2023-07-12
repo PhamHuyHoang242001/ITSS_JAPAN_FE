@@ -37,27 +37,21 @@
         <font-awesome-icon icon="location-dot" style="margin-right: 11px" />
         {{ cafe.address }}
       </p>
-      <div v-if="cafe.isOpen">
-        <div>
-          <font-awesome-icon
-            style="color: #805d49; margin-right: 9px"
-            icon="clock"
-          />
-          {{ cafe.time_open }}-{{ cafe.time_close }} -
-          <span style="font-weight: 700"> オープン中 - 座席数 : 12/36 </span>
-        </div>
-      </div>
-      <div v-if="!cafe.isOpen">
-        <div>
-          <font-awesome-icon
-            style="color: #805d49; margin-right: 9px"
-            icon="clock"
-          />
-          {{ cafe.time_open }}-{{ cafe.time_close }} -
-          <span style="font-weight: 700; color: red"> 閉店 </span>
-        </div>
-      </div>
-      <!-- <span v-if="isOpen" class="font-semibold"> - オープン中</span>
+        <div v-if="cafe.isOpen">
+                    <div><font-awesome-icon style="color: #805D49; margin-right:9px;" icon="clock"  />   {{ cafe.time_open }}-{{ cafe.time_close }} -  
+                      <span style="font-weight: 700;">
+                      オープン中 - 座席数 : {{ !cafe.curr_seat ? 0 : cafe.curr_seat }}/{{ !cafe.max_seat ? 0 : cafe.max_seat }}
+                      </span>
+                     </div>
+                     </div>
+                     <div v-if="!cafe.isOpen">
+                    <div><font-awesome-icon style="color: #805D49; margin-right:9px;" icon="clock" />   {{ cafe.time_open }}-{{ cafe.time_close }} -  
+                      <span style="font-weight: 700; color: red;">
+                        閉店
+                      </span>
+                     </div>
+                     </div>
+        <!-- <span v-if="isOpen" class="font-semibold"> - オープン中</span>
         <span v-else class="font-semibold"> - 空く</span> -->
       <p>
         <font-awesome-icon icon="phone" style="margin-right: 10px" />

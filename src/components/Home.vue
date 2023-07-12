@@ -202,35 +202,27 @@ export default {
                       </div>
                       <!-- <div v-if="todo.air_conditioner" style="margin-top: 10px;;font-size: 15px;">エアコン：ある</div>
                     <div v-if="!todo.air_conditioner" style="margin-top: 10px;;font-size: 15px;">エアコン：ない</div> -->
-                      <div v-if="todo.isOpen">
-                        <div>
-                          <font-awesome-icon
-                            style="color: #805d49"
-                            icon="clock"
-                          />
-                          {{ todo.time_open }}-{{ todo.time_close }} -
-                          <span style="font-weight: 700">
-                            オープン中 - 座席数 : 12/36
-                          </span>
-                        </div>
+                    <div v-if="todo.isOpen">
+                      <div><font-awesome-icon style="color: #805D49;" icon="clock" /> {{ todo.time_open }}-{{
+                        todo.time_close }} -
+                        <span style="font-weight: 700;">
+                          オープン中 - 座席数 : {{ !todo.curr_seat ? 0 : todo.curr_seat }}/{{ !todo.max_seat ? 0 : todo.max_seat }}
+                        </span>
                       </div>
-                      <div v-if="!todo.isOpen">
-                        <div>
-                          <font-awesome-icon
-                            style="color: #805d49"
-                            icon="clock"
-                          />
-                          {{ todo.time_open }}-{{ todo.time_close }} -
-                          <span style="font-weight: 700; color: red">
-                            閉店
-                          </span>
-                        </div>
+                    </div>
+                    <div v-if="!todo.isOpen">
+                      <div><font-awesome-icon style="color: #805D49;" icon="clock" /> {{ todo.time_open }}-{{
+                        todo.time_close }} -
+                        <span style="font-weight: 700; color:red;">
+                          閉店
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </router-link>
+
+            </div>
           </li>
         </div>
         <div class="flex items-center justify-center p-2">
