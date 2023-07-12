@@ -24,7 +24,7 @@
             <div class="flex items-center justify-between">
               <div class="flex items-start">
                 <div class="flex items-center h-5">
-                  <input id="showpwd" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" @change="showPassword" />
+                  <input id="showpwd" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" @click="showPassword" />
                 </div>
                 <div class="ml-3 text-sm">
                   <label for="showpwd" class="text-gray-500 dark:text-gray-300">パスワードを表示する</label>
@@ -46,7 +46,7 @@ import { useRouter } from 'vue-router';
 
 export default {
   setup() {
-    const inputPasswordType = ref('password');
+    const inputType = ref('password');
     const form = ref({
       email: '',
       password: ''
@@ -81,14 +81,12 @@ export default {
     };
 
     const showPassword = () => {
-      const inputPasswordTypeValue = inputPasswordType.value === 'password' ? 'text' : 'password';
-      inputPasswordType.value = inputPasswordTypeValue
-      console.log(inputPasswordType.value)
+      inputType.value = inputType.value === 'password' ? 'text' : 'password';
     };
 
     return {
       form,
-      inputPasswordType,
+      inputType,
       showPassword,
       handleLogin
     };
