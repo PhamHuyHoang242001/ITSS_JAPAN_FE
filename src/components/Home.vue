@@ -15,7 +15,8 @@ export default {
         name: '',
         city: '',
         air_conditioner: '',
-        star: ''
+        star: '',
+        seat:0,
       },
       listShop: [],
       page: 1,
@@ -188,7 +189,7 @@ export default {
         </div>
 
       </div>
-      <div class="filter">
+      <div class="filter" style="height: 400px;">
         <div class="content" style="font-size: 20px; font-weight: 900; padding-top: 30px; margin-bottom: 10px;">
           <div class="grid grid-cols-2 gap-2" style="margin-bottom: 10px;">
             フィルター
@@ -209,12 +210,17 @@ export default {
           <input style="" type="radio" v-model="keyword.air_conditioner" name="air" id="air" value="1"
             @change="searchFilter()"> 効いている
         </div>
+
+        <hr style="color: black; font-weight: bold; width: 250px" />
+        <label for="seat" style="font-size: 15px;
+                          font-weight: 900; padding-bottom: 20px;">空席数</label>
+         <input type="number" name="seat" id="seat" v-model="keyword.seat" @change="searchFilter()" style="width:40%; height:40px; margin-left:32px; color: black; margin: 20px 0px 20px 25px; text-align:center;">
         <hr style="color: black; font-weight: bold; width: 250px;margin-bottom: 30px;" />
         <label for="star" style="font-size: 15px;
                           font-weight: 900; padding-bottom: 20px;">スター </label>
 
         <select name="star" id="star"
-          style="margin-left: 20px; color: black; text-align: center; width: 40%; height: 15%;" v-model="keyword.star"
+          style="margin-left: 20px; color: black; text-align: center; width: 40%; height: 40px;" v-model="keyword.star"
           @click="searchFilter()">
           <option value="">None</option>
           <option value="1">1</option>
@@ -261,9 +267,7 @@ li {
 .filter {
   border-radius: 10px;
   background-color: #805D49;
-  height: 300px;
   width: 70%;
-  transform: translate(30%, 20%);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding-bottom: 50px;
   padding-left: 30px;
