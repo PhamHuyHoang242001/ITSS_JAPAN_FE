@@ -223,6 +223,7 @@ export default {
               </div>
 
             </div>
+            </router-link>
           </li>
         </div>
         <div class="flex items-center justify-center p-2">
