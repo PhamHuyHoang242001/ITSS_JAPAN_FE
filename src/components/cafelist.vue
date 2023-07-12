@@ -4,11 +4,12 @@
       <div class="flex justify-between items-center pb-4">
         <div class="text-2xl font-semibold">私の喫茶店リスト</div>
         <div class="flex items-center">
-          <div class="bg-[#36ABFF] text-white hover:bg-sky-600 font-semibold rounded py-2 px-5">
+          <div
+            class="bg-[#36ABFF] text-white hover:bg-sky-600 font-semibold rounded py-2 px-5"
+          >
             <router-link :to="{ name: 'NewCoffee' }" class="flex items-center">
               <button>✛　喫茶店を追加</button>
             </router-link>
-
           </div>
         </div>
       </div>
@@ -20,29 +21,57 @@
         orderBy="store.id"
         class="pb-4"
       > -->
-        <div class="flex justify-between border-2 border-black rounded-lg py-4 px-4">
+        <div
+          class="flex justify-between border-2 border-black rounded-lg py-4 px-4"
+        >
           <div class="flex">
             <div>
-              <img class="rounded object-cover" :src="store.photoUrl" alt="" style="height: 120px; width: 180px;" />
+              <img
+                class="rounded object-cover"
+                :src="store.photoUrl"
+                alt=""
+                style="height: 120px; width: 180px"
+              />
             </div>
             <div class="ml-5">
-              <div class="font-semibold text-xl pb-2" @click="() => TogglePopup1('buttonTrigger')">
-                <router-link :to="{ name: 'ShowCafeDetail', params: { id: store.id } }" class="flex items-center">
+              <div
+                class="font-semibold text-xl pb-2"
+                @click="() => TogglePopup1('buttonTrigger')"
+              >
+                <router-link
+                  :to="{ name: 'ShowCafeDetail', params: { id: store.id } }"
+                  class="flex items-center"
+                >
                   {{ store.name }}
-              </router-link>
-               
+                </router-link>
+              </div>
+              <div>
+                <el-rate
+                  v-model="store.star"
+                  disabled
+                  show-score
+                  text-color="#ff9900"
+                  score-template="{value}"
+                >
+                </el-rate>
               </div>
               <div class="flex">
                 <div class="w-4 h-4 self-center">
-                  <img class="rounded-full cursor-pointer" src="https://cdn-icons-png.flaticon.com/128/2838/2838912.png"
-                    alt="" />
+                  <img
+                    class="rounded-full cursor-pointer"
+                    src="https://cdn-icons-png.flaticon.com/128/2838/2838912.png"
+                    alt=""
+                  />
                 </div>
                 <div class="ml-4">{{ store.address }}</div>
               </div>
               <div class="flex">
                 <div class="w-4 h-4 self-center">
-                  <img class="rounded-full cursor-pointer" src="https://cdn-icons-png.flaticon.com/128/3239/3239945.png"
-                    alt="" />
+                  <img
+                    class="rounded-full cursor-pointer"
+                    src="https://cdn-icons-png.flaticon.com/128/3239/3239945.png"
+                    alt=""
+                  />
                 </div>
                 <div class="ml-4">
                   {{ store.time_open }} - {{ store.time_close }} &nbsp; &nbsp;
@@ -53,17 +82,23 @@
           </div>
           <div class="flex">
             <div>
-              <router-link :to="{ name: 'UpdateCoffee', params: { id: store.id } }" class="flex items-center">
-                <button class="bg-[#36ABFF] text-white hover:bg-sky-600 font-semibold rounded-lg px-5 py-2 mr-3">
+              <router-link
+                :to="{ name: 'UpdateCoffee', params: { id: store.id } }"
+                class="flex items-center"
+              >
+                <button
+                  class="bg-[#36ABFF] text-white hover:bg-sky-600 font-semibold rounded-lg px-5 py-2 mr-3"
+                >
                   <font-awesome-icon icon="pen" />
                   編集
                 </button>
               </router-link>
-
             </div>
             <div>
-              <button @click="xoaStore(store.id)"
-                class="bg-[#FF4848] text-white hover:bg-red-600 font-semibold rounded-lg px-5 py-2">
+              <button
+                @click="xoaStore(store.id)"
+                class="bg-[#FF4848] text-white hover:bg-red-600 font-semibold rounded-lg px-5 py-2"
+              >
                 消す
               </button>
             </div>
@@ -71,8 +106,13 @@
         </div>
       </div>
       <div class="p-2">
-        <v-pagination v-model="page" :pages="pageCount" :range-size="1" active-color="#DCEDFF"
-          @update:modelValue="search" />
+        <v-pagination
+          v-model="page"
+          :pages="pageCount"
+          :range-size="1"
+          active-color="#DCEDFF"
+          @update:modelValue="search"
+        />
       </div>
     </div>
   </div>
@@ -131,7 +171,6 @@ export default {
           this.errors = error.response.data.errors;
         });
     },
-
   },
   setup() {
     // const popupTriggers1 = ref({

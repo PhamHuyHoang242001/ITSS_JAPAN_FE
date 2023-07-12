@@ -155,20 +155,23 @@ export default {
             <div class="labelLayout col-span-3">
               名前
             </div>
-            <input :value="this.coffeShop.name" @input="onNameInput" type="text" class="input col-span-7">
+            <input :value="this.coffeShop.name" @input="onNameInput" type="text" class="input col-span-7"
+            style="border:1px solid #000;border-radius:10px">
           </div>
           <div class=" grid grid-cols-10">
             <div class="labelLayout col-span-3">
               場所
             </div>
-            <input :value="this.coffeShop.address" @input="onAddressInput" type="text" class="input col-span-7">
+            <input :value="this.coffeShop.address" @input="onAddressInput" type="text" class="input col-span-7"
+            style="border:1px solid #000;border-radius:10px">
           </div>
 
           <div class=" grid grid-cols-10">
             <div class="labelLayout col-span-3">
               電話番号
             </div>
-            <input :value="this.coffeShop.phone_number" @input="onPhoneInput" type="text" class="input col-span-7">
+            <input :value="this.coffeShop.phone_number" @input="onPhoneInput" type="text" class="input col-span-7"
+            style="border:1px solid #000;border-radius:10px">
           </div>
 
           <div class=" grid grid-cols-10">
@@ -176,9 +179,11 @@ export default {
               営業時間
             </div>
             <div class=" col-span-7 grid grid-cols-10 gap-4">
-              <input :value="this.coffeShop.time_open" @input="onOPInput" type="time" class="input col-span-4">
+              <input :value="this.coffeShop.time_open" @input="onOPInput" type="time" class="input col-span-4"
+              style="border:1px solid #000;border-radius:10px">
               <span class="labelLayout" style="padding-top:30%;">から</span>
-              <input :value="this.coffeShop.time_close" @input="onCLInput" type="time" class="input col-span-4">
+              <input :value="this.coffeShop.time_close" @input="onCLInput" type="time" class="input col-span-4"
+              style="border:1px solid #000;border-radius:10px">
               <span class="labelLayout" style="padding-top:30%;">まで</span>
             </div>
           </div>
@@ -203,9 +208,9 @@ export default {
               座席数
             </div>
             <div class=" col-span-7 grid grid-cols-10 gap-4">
-              <input :value="this.coffeShop.curr_seat" @input="onCurrentSeatInput" type="text" class="input col-span-4">
+              <input :value="this.coffeShop.max_seat" @input="onMaxSeatInput" type="text" class="input col-span-4" style="border:1px solid #000;border-radius:10px">
               <span class="labelLayout" style="padding-top:30%;">現在 </span>
-              <input :value="this.coffeShop.max_seat" @input="onMaxSeatInput" type="text" class="input col-span-4">
+              <input :value="this.coffeShop.current_seat" @input="onCurrentSeatInput" type="text" class="input col-span-4" style="border:1px solid #000;border-radius:10px">
               <span class="labelLayout" style="padding-top:30%;">最大</span>
             </div>
           </div>

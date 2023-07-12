@@ -68,7 +68,7 @@ export default {
         </div>
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
           <router-link :to="{ name: 'home' }">
-            <div class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">検索</div>
+            <div class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ホームページ</div>
           </router-link>
           <router-link :to="{ name: 'bookmark' }">
             <div class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ブックマーク</div>

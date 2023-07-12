@@ -50,22 +50,19 @@ export default {
 </script>
 <template>
 
-<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-     
-        <img src="/chillcafe.png" class="h-8 mr-3"  style=" margin-left: 20px" alt="Chill Cafe" />
-    
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-        style="color: #805d49; margin-left: 30%">ChillCafe</span>
-
-      <img style="margin-left: 20%" id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
+<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600" style="background-color:#805d49;height:92px">
+    <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+        <img src="/chillcafe.png" class="h-8"  alt="Chill Cafe" style="height: 60px;width: 60px"/>
+      <span class="self-center text-3xl font-semibold whitespace-nowrap dark:text-white"
+        style="color: #ffffff;">ChillCafe</span>
+      <img style="height: 60px;width: 60px" id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
         data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer"
-        src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="User dropdown" />
+        src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="User dropdown" />  
 
       <!-- Dropdown menu -->
       <div id="userDropdown"
-        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600" style="border: 1px solid #000; padding:10px; ">
+        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white"  style="background-color: #36ABFF; border-radius:5px;text-align:center;">
           <div>{{ user.name }}</div>
         </div>
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">

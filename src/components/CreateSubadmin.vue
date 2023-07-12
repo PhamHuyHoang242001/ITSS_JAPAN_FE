@@ -12,6 +12,7 @@
                 <input
                   class="shadow appearance-none border rounded w-3/4 py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   v-model="form.email" type="text"
+                  style="border:1px solid #000;border-radius:10px"
                   >
               </div>
               <div class="flex items-center mb-4">
@@ -20,7 +21,8 @@
                 </label>
                 <input
                   class="shadow appearance-none border rounded w-3/4 py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  v-model="form.password" type="text">
+                  v-model="form.password" type="text"
+                  style="border:1px solid #000;border-radius:10px">
               </div>
               <div class="flex items-center mb-4">
                 <label class="w-1/4 text-gray-700 font-bold" for="name">
@@ -28,13 +30,15 @@
                 </label>
                 <input
                   class="shadow appearance-none border rounded w-3/4 py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  v-model="form.name" type="text">
+                  v-model="form.name" type="text"
+                  style="border:1px solid #000;border-radius:10px">
               </div>
               
               <div class="flex justify-center">
                 <button
                   class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  type="submit">
+                  type="submit"
+                  style="border:1px solid #000;border-radius:10px">
                   作成
                 </button>
               </div>
