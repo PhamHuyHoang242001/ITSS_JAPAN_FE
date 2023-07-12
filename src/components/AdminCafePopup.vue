@@ -68,9 +68,10 @@
       </div>
       <div class="flex overflow-x-auto">
         <img
-          v-for="photo in store.photoUrl"
+          v-for="(photo, index) in store.photoUrl"
           :src="photo.photoUrl"
           alt="Cafe Image"
+          :key="index"
           class="rounded-lg aspect-w-1 aspect-h-1 max-w-xs mr-5"
           style="width: 400px; height: 200px"
         />

@@ -2,7 +2,7 @@
   <div class="w-full flex justify-center">
     <div class="mt-28 w-3/4 mx-8 flex justify-center flex-col">
       <div class="flex justify-between items-center pb-4">
-        <div class="text-2xl font-semibold">私のカフェリスト</div>
+        <div class="text-2xl font-semibold">私の喫茶店リスト</div>
         <div class="flex items-center">
           <div class="bg-[#36ABFF] text-white hover:bg-sky-600 font-semibold rounded py-2 px-5">
             <router-link :to="{ name: 'NewCoffee' }" class="flex items-center">

@@ -6,7 +6,7 @@
         <div class="text-sm font-semibold pb-4 pt-5">
           <div>
             <div class="flex items-center">
-                        <div v-for="n in Math.floor(cafe.star)">
+                        <div v-for="(n, index) in Math.floor(cafe.star)" :key="index">
                           <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <title>First star</title>
@@ -16,7 +16,7 @@
                           </svg>
 
                         </div>
-                        <div v-for="n in (5 - Math.floor(cafe.star))">
+                        <div v-for="(n, index) in (5 - Math.floor(cafe.star))" :key="index">
                           <svg aria-hidden="true" class="w-5 h-5 text-gray-300 dark:text-gray-500" fill="currentColor"
                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <title>Fifth star</title>
@@ -47,36 +47,35 @@
         <font-awesome-icon icon="location-dot" style="margin-right:11px" />
         {{ cafe.address }}
       </p>
-      <p>
         <div v-if="cafe.isOpen">
-                    <div><font-awesome-icon style="color: #805D49;" icon="clock" />   {{ cafe.time_open }}-{{ cafe.time_close }} -  
+                    <div><font-awesome-icon style="color: #805D49; margin-right:9px;" icon="clock"  />   {{ cafe.time_open }}-{{ cafe.time_close }} -  
                       <span style="font-weight: 700;">
-                      オープン中ー空く
+                      オープン中 - 座席数 : 12/36
                       </span>
                      </div>
                      </div>
                      <div v-if="!cafe.isOpen">
-                    <div><font-awesome-icon style="color: #805D49;" icon="clock" />   {{ cafe.time_open }}-{{ cafe.time_close }} -  
-                      <span style="font-weight: 700;">
-                        空いていない
+                    <div><font-awesome-icon style="color: #805D49; margin-right:9px;" icon="clock" />   {{ cafe.time_open }}-{{ cafe.time_close }} -  
+                      <span style="font-weight: 700; color: red;">
+                        閉店
                       </span>
                      </div>
                      </div>
         <!-- <span v-if="isOpen" class="font-semibold"> - オープン中</span>
         <span v-else class="font-semibold"> - 空く</span> -->
-      </p>
       <p>
         <font-awesome-icon icon="phone" style="margin-right:10px" />
         <span class="underline">{{ cafe.phone_number }}</span>
       </p>
-      <p style="font-style:italic; font-size: 14px;" v-if="cafe.air_conditioner">エアコン：効いている</p>
-      <p style="font-style: italic; font-size: 14px;" v-else>エアコン：効いていない</p>
+      <p style="font-style:italic; font-weight: 700; margin-top:15px;" v-if="cafe.air_conditioner">エアコン： <span style="font-weight: 700; color:#009900;" >  効いている </span></p>
+      <p style="font-style: italic; font-weight: 700; margin-top:15px;" v-else>エアコン：<span style="font-weight: 700; color:red;" >  効いていない </span></p>
       <p class="text-2xl font-semibold py-3">写真</p>
       <div class="flex overflow-x-auto">
         <img
-          v-for="photo in cafe.photoUrl"
+          v-for="(photo, index) in cafe.photoUrl"
           :src="photo.photoUrl"
           alt="Cafe Image"
+          :key="index"
           class="rounded-lg aspect-w-1 aspect-h-1 max-w-xs mr-5"
           style="width: 400px; height: 200px"
         />
@@ -97,7 +96,7 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-11 gap-11 py-3" v-for="review in listReview" >
+    <div class="grid grid-cols-11 gap-11 py-3" v-for="(review, index) in listReview" :key="index" >
       <div class="col-span-1">
         <div class="flex items-center justify-center w-10 h-10 border-2 border-black rounded-full px-5 py-5 mx-5">
           <font-awesome-icon icon="user" class="text-black" />
@@ -111,7 +110,7 @@
             <div class="text-sm font-semibold pb-4 pt-5">
               <div>
                 <div class="flex items-center">
-                        <div v-for="n in Math.floor(review.star)">
+                        <div v-for="(n, index) in Math.floor(review.star)" :key="index">
                           <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <title>First star</title>
@@ -121,7 +120,7 @@
                           </svg>
 
                         </div>
-                        <div v-for="n in (5 - Math.floor(review.star))">
+                        <div v-for="(n, index) in (5 - Math.floor(review.star))" :key="index">
                           <svg aria-hidden="true" class="w-5 h-5 text-gray-300 dark:text-gray-500" fill="currentColor"
                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <title>Fifth star</title>

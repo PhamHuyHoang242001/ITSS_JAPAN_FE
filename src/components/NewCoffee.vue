@@ -24,7 +24,9 @@ export default {
             user_id: '',
             star: '',
             bookmark:'',
-            isOpen:''
+            isOpen:'',
+            max_seat: '',
+
         }
 
       ,
@@ -87,6 +89,9 @@ export default {
     },
     onPhoneInput(e) {
       this.coffeShop.phone_number = e.target.value
+    },
+    onMaxSeatInput(e) {
+      this.coffeShop.max_seat = e.target.value
     },
     onAirInput(bool) {
       if(bool == true)
@@ -159,7 +164,15 @@ export default {
               <input type="radio"  class="checkbox-round" name="checkopen" @change="onAirInput(false)"  >
               <span style="max-width: 3px;font-family: 'Inter';">効いていない</span>
             </ul>
-           
+          </div>
+        </div>
+
+        <div class=" grid grid-cols-10">
+          <div class="labelLayout col-span-3">
+            最大座席数
+          </div>
+          <div  class=" col-span-7 grid grid-cols-3 gap-4">
+            <input :value="this.coffeShop.max_seat" @input="onMaxSeatInput" type="text" class="input col-span-7">
           </div>
         </div>
       </div> 

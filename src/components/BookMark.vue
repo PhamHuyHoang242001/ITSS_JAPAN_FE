@@ -90,7 +90,7 @@ export default {
     <div class="grid grid-cols-3 gap-3">
       <div class="col-span-2">
         <div class="grid grid-cols-1 gap-1" style="margin-top: 0px;">
-          <li v-for="todo in listShop" style="margin-top: 20px;">
+          <li v-for="(todo, index) in listShop" style="margin-top: 20px;" :key="index">
             <div style="text-align: left;" class="box">
               <div class="grid grid-cols-3 gap-3">
                 <div class="col-span-1">
@@ -106,7 +106,7 @@ export default {
 
                     <div v-if="todo.star != null" style="margin-top: 10px;margin-bottom: 25px;font-size: 15px;">
                       <div class="flex items-center">
-                        <div v-for="n in Math.floor(todo.star)">
+                        <div v-for="(n, index) in Math.floor(todo.star)" :key="index">
                           <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <title>First star</title>
@@ -116,7 +116,7 @@ export default {
                           </svg>
 
                         </div>
-                        <div v-for="n in (5 - Math.floor(todo.star))">
+                        <div v-for="(n, index) in (5 - Math.floor(todo.star))" :key="index">
                           <svg aria-hidden="true" class="w-5 h-5 text-gray-300 dark:text-gray-500" fill="currentColor"
                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <title>Fifth star</title>
@@ -143,15 +143,15 @@ export default {
                       <div><font-awesome-icon style="color: #805D49;" icon="clock" /> {{ todo.shop.time_open }}-{{
                         todo.shop.time_close }} -
                         <span style="font-weight: 700;">
-                          オープン中ー空く
+                          オープン中 - 座席数: 12/36
                         </span>
                       </div>
                     </div>
                     <div v-if="!todo.isOpen">
                       <div><font-awesome-icon style="color: #805D49;" icon="clock" /> {{ todo.shop.time_open }}-{{
                         todo.shop.time_close }} -
-                        <span style="font-weight: 700;">
-                          空いていない
+                        <span style="font-weight: 700; color:red;">
+                          閉店
                         </span>
                       </div>
                     </div>

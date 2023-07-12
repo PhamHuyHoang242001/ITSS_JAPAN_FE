@@ -116,6 +116,12 @@ export default {
     onPhoneInput(e) {
       this.coffeShop.phone_number = e.target.value
     },
+    onMaxSeatInput(e) {
+      this.coffeShop.max_seat = e.target.value
+    },
+    onCurrentSeatInput(e) {
+      this.coffeShop.current_seat = e.target.value
+    },
     onAirInput(bool) {
       if (bool == true)
         this.coffeShop.air_conditioner = 1
@@ -188,6 +194,17 @@ export default {
                 <span style="max-width: 3px;font-family: 'Inter';">効いていない</span>
               </ul>
 
+            </div>
+          </div>
+          <div class=" grid grid-cols-10">
+            <div class="labelLayout col-span-3">
+              座席数
+            </div>
+            <div class=" col-span-7 grid grid-cols-10 gap-4">
+              <input :value="this.coffeShop.max_seat" @input="onMaxSeatInput" type="text" class="input col-span-4">
+              <span class="labelLayout" style="padding-top:30%;">現在 </span>
+              <input :value="this.coffeShop.current_seat" @input="onCurrentSeatInput" type="text" class="input col-span-4">
+              <span class="labelLayout" style="padding-top:30%;">最大</span>
             </div>
           </div>
         </div>

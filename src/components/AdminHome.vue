@@ -5,13 +5,7 @@
                 <div class="text-2xl font-semibold">承認待ちリスト</div>
             </div>
             <div v-for="store in stores" v-bind:key="store.id" class="pb-4">
-                <!-- <div
-          v-for="store in stores"
-          v-bind:key="store.id"
-          v-bind:todoProps="store.id"
-          orderBy="store.id"
-          class="pb-4"
-        > -->
+
                 <div class="flex justify-between border-2 border-black rounded-lg py-4 px-4">
                     <div class="flex">
                         <div>
@@ -25,7 +19,7 @@
                                 <div class="">{{ store.address }}</div>
                             </div>
                             <div>
-                                <star-rating :star-size="20" v-model:rating="store.star"></star-rating>
+                                <star-rating :star-size="20" v-model:rating="store.star" ></star-rating>
                             </div>
                         </div>
                     </div>
